@@ -1,0 +1,32 @@
+devices:
+  - input_name: 'Wireless Present̤ Keyboard'
+    output_name: logitech-r400
+    remappings:
+      KEY_PAGEUP: # button left (obvious)
+        - code: KEY_LEFT
+      KEY_PAGEDOWN: # button right (obvious)
+        - code: KEY_RIGHT
+
+      KEY_B:  # button present 
+        - code: KEY_SPACE
+      # The following three are actually the same button (end presentation)
+          # And they are triggered in alternation: 
+          # - one time the combo between F5 and shift (presumably to start the presentation)
+          # - and another time with esc, to end the presentation 
+      # So, the easiest thing to do is map all the elements to the same function!
+      KEY_ESC:
+        - code: KEY_F
+      KEY_F5:
+        - code: KEY_F
+      KEY_LEFTSHIFT:
+        - code: KEY_F
+
+
+  #   - input_name: 'Logitech G502 HERO Gaming Mouse'
+  #     output_name: 'Logitech G502 HERO Gaming Mouse'
+  #     remappings:
+  #       REL_HWHEEL:
+  #         - code: REL_HWHEEL
+  #           repeat: true 
+  #           count: 5
+

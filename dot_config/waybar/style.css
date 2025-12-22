@@ -354,6 +354,7 @@ window#waybar {
      padding: 8px 1rem; */
     margin-right: 10px;
     color: #eceff4;
+    background-color: black;
 }
 
 #custom-keyboard-layout {
