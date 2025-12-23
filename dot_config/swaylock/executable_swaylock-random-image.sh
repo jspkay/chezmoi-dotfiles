@@ -31,4 +31,4 @@ blur=$HOME/builds/FastGaussianBlur/fastblur
 # we actually blur the image and make it available
 # for the next lock
 $blur $IMAGE $file $sigma
-notify-send "Background Image" "New Background Image is ready to be processed!"
+# notify-send "Background Image" "New Background Image is ready to be processed!"
