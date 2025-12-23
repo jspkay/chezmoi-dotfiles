@@ -1,7 +1,7 @@
 [
   {
     "name": "Lock screen",
-    "exec": "swaylock",
+    "exec": "/home/salvo/.config/swaylock/swaylock-random-image.sh",
     "icon": "/usr/share/nwg-bar/images/system-lock-screen.svg"
   },
   {
@@ -11,7 +11,7 @@
   },
   {
     "name": "Logout",
-    "exec": "niri msg action quit --skip-confirmation=true",
+    "exec": "niri msg action quit --skip-confirmation",
     "icon": "/usr/share/nwg-bar/images/system-log-out.svg"
   },
   {

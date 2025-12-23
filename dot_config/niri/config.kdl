@@ -13,7 +13,7 @@ input {
             // For more information, see xkeyboard-config(7).
 
             // For example:
-            layout "it,us"
+            layout "us,it"
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
 
             // If this section is empty, niri will fetch xkb settings
@@ -245,9 +245,9 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-sh-at-startup "waybar -c $XDG_CONFIG_HOME/niri/waybar/waybar.config -s $XDG_CONFIG_HOME/niri/waybar/waybar.style.css"
+spawn-sh-at-startup "waybar -c $XDG_CONFIG_HOME/niri/waybar/waybar.config -s $XDG_CONFIG_HOME/niri/waybar/waybar.style.css >/tmp/waybar 2>&1"
 spawn-sh-at-startup "swayidle before-sleep \"bash $XDG_CONFIG_HOME/swaylock/swaylock-random-image.sh\" > /tmp/swayidle 2>&1"
-spawn-at-startup "swaync -c $XDG_CONFIG_HOME/swaync/config.json"
+spawn-sh-at-startup "swaync -c $XDG_CONFIG_HOME/swaync/config.json > /tmp/swanc 2>&1"
 spawn-at-startup "wpaperd"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
