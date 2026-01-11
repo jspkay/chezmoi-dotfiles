@@ -288,10 +288,10 @@
       "default": ["", ""]
     },
     "on-click": "$HOME/.local/scripts/audioselector.sh",
-    "on-scroll-up": "$HOME/.config/sway/scripts/audio.py plus",
-    "on-scroll-down": "$HOME/.config/sway/scripts/audio.py minus",
-    "on-click-middle": "$HOME/.config/sway/scripts/audio.py toggleMute",
-    "on-click-right": "$HOME/.config/sway/scripts/audio.py toggleMute",
+    "on-scroll-up": "$HOME/.local//scripts/audio.sh plus",
+    "on-scroll-down": "$HOME/.local/scripts/audio.sh minus",
+    "on-click-middle": "$HOME/.local/scripts/audio.sh toggleMute",
+    "on-click-right": "$HOME/.local/scripts/audio.sh toggleMute",
   },
   "custom/pacman": {
     "format": " {}",
