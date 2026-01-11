@@ -1,3 +1,9 @@
 {
-  "positionX": "left"
+  "positionX": "left",
+  "widgets": [
+    "title",
+    "dnd",
+    "notifications",
+    "mpris",
+    "volume"]
 }
