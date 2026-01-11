@@ -13,7 +13,7 @@ input {
             // For more information, see xkeyboard-config(7).
 
             // For example:
-            layout "us,it"
+            layout "it,us"
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
 
             // If this section is empty, niri will fetch xkb settings
@@ -46,7 +46,7 @@ input {
     mouse {
         // off
         // natural-scroll
-        accel-speed 1
+        accel-speed -0.2
         // accel-profile "flat"
         // scroll-method "no-scroll"
     }
@@ -64,7 +64,7 @@ input {
 
     warp-mouse-to-focus mode="center-xy"
     // focus the window only if there is a scroll smaller or equal to 32%
-    focus-follows-mouse max-scroll-amount="32%"
+    focus-follows-mouse max-scroll-amount="35%"
     workspace-auto-back-and-forth
     disable-power-key-handling
 }
@@ -85,6 +85,28 @@ output "eDP-1" {
       // top-right
     }
 }
+output "HKC OVERSEAS" {
+    hot-corners{
+        bottom-right
+    }
+}
+output "Dell Inc. DELL P2317H HH77Y77JCKPB"{
+    hot-corners{
+        top-right
+    }
+}
+output "Samsung Electric Company SyncMaster HMBB405425"{
+    hot-corners{
+        top-right
+        top-left
+        bottom-left
+    }
+    layout{
+        default-column-width {
+            proportion 1.0;
+        }
+    }
+}
 
 // This makes it such the background is 'global' to the output
 /-layer-rule{
@@ -93,7 +115,7 @@ output "eDP-1" {
 
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
-    // background-color "transparent"
+    background-color  "#262EA0"
 
     // - "never", 
     // - "always", 
@@ -230,13 +252,14 @@ layout {
         inactive-color "#0007"
     }
 
-    gaps 10
+    gaps 3
     struts {
-        left 10
-        right 10
+        left 23
+        right 23
         top 0
         bottom 0
     }
+
 }
 
 // Add lines like this to spawn processes at startup.
@@ -244,11 +267,16 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
+environment {
+    XDG_CONFIG_HOME "/home/salvo/.config"
+}
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-sh-at-startup "waybar -c $XDG_CONFIG_HOME/niri/waybar/waybar.config -s $XDG_CONFIG_HOME/niri/waybar/waybar.style.css >/tmp/waybar 2>&1"
 spawn-sh-at-startup "swayidle -w before-sleep \"bash $XDG_CONFIG_HOME/swaylock/swaylock-random-image.sh\" > /tmp/swayidle 2>&1"
 spawn-sh-at-startup "swaync -c $XDG_CONFIG_HOME/swaync/config.json > /tmp/swanc 2>&1"
 spawn-at-startup "wpaperd"
+// spawn-at-startup "kanata"
+spawn-at-startup "shikane"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -620,4 +648,6 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
     Mod+Shift+S { spawn "systemctl" "suspend" ; }
+
+    // Alt+Grave{}
 }
