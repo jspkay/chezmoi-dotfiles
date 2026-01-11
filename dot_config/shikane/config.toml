@@ -1,0 +1,58 @@
+[[profile]]
+name="home_lyon"
+exec = ["notify-send shikane \"Profile $SHIKANE_PROFILE_NAME has been applied\""]
+  [[profile.output]]
+  search = "HKC OVERSEAS LIMITED"
+  enable = true
+  mode = "1920x1080@60"
+  position = "13498,10000"
+  scale = 1
+
+  [[profile.output]]
+  search = "LG Display"
+  enable = true
+  mode = "1920x1080@60"
+  position = "11749,10000"
+  scale = 1.1
+
+[[profile]]
+name="just_laptop"
+exec = ["notify-send shikane \"Profile $SHIKANE_PROFILE_NAME has been applied\""]
+  [[profile.output]]
+  search = "LG Display"
+  enable = true
+  mode = "1920x1080@60"
+  position = "11749,10000"
+  scale = 1.1
+
+[[profile]]
+name = "work_triple_screen"
+exec = ["notify-send shikane \"Profile $SHIKANE_PROFILE_NAME has been applied\"", "killall wpaperd", "wpaperd -d"]
+
+[[profile.output]]
+enable = true
+search = ["m=SyncMaster", "s=HMBB405425", "v=Samsung Electric Company"]
+mode = "1920x1200@59.95Hz"
+position = "6880,9500"
+scale = 1.0
+transform = "90"
+adaptive_sync = false
+
+[[profile.output]]
+enable = true
+search = ["m=DELL P2317H", "s=HH77Y77JCKPB", "v=Dell Inc."]
+mode = "1920x1080@60Hz"
+position = "8080,10000"
+scale = 1.0
+transform = "normal"
+adaptive_sync = false
+
+[[profile.output]]
+enable = true
+search = ["m=0x0724", "s=", "v=LG Display"]
+mode = "1920x1080@60.02Hz"
+position = "10000,10400"
+scale = 1.3
+transform = "normal"
+adaptive_sync = false
+
