@@ -1,5 +1,9 @@
+echo "Sourcing .zshenv"
+echo "I was sourced (.zenv)" > /tmp/.zenv
+
 export PATH="$HOME/.local/bin:$PATH"
 
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
 
+. $XDG_CONFIG_HOME/bemenu/config.sh
