@@ -1,0 +1,59 @@
+# Private GitLab instance
+Host gitlab.pmcs2i.ec-lyon.fr
+  PreferredAuthentications publickey
+  User spappala
+  IdentityFile ~/.ssh/gitlab.eclyon.fr
+
+Host gitlab.com
+  PreferredAuthentications publickey
+  User jspkay
+  IdentityFile ~/.ssh/gitlab.com
+
+# Gpu1 
+Host gpu1
+  HostName gpu1.inl90.ec-lyon.fr
+  PreferredAuthentications publickey,password
+  User spappalardo@inl34
+  IdentityFile ~/.ssh/gpu1new
+  WarnWeakCrypto no
+
+# github.com
+Host github.com
+  HostName github.com
+  PreferredAuthentications publickey
+  User jspkay
+  IdentityFile ~/.ssh/github.com
+
+
+Host leom011
+  HostName 156.18.34.11
+  PreferredAuthentications publickey
+  User salvo
+  IdentityFile ~/.ssh/leom011
+
+Host aruba
+  HostName 89.36.208.63 
+  PreferredAuthentications publickey
+  User debian
+  IdentityFile ~/.ssh/aruba_cloud
+
+# Codeberg 
+Host codeberg.org
+  HostName codeberg.org
+  User git 
+  IdentityFile ~/.ssh/codeberg
+
+
+# New gpu machine 
+Host delorean1
+  HostName 156.18.90.97
+  PreferredAuthentications publickey,password
+  User enseignant
+  IdentityFile ~/.ssh/delorean
+
+Host delorean2
+  HostName 156.18.90.98
+  PreferredAuthentications publickey,password
+  User enseignant2
+  IdentityFile ~/.ssh/delorean
+
