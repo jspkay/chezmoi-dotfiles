@@ -118,7 +118,16 @@ export PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ 
 # PS1="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ "$'\n'" >%{$reset_color%} $vcs_info_msg_0_"
 
 
-export PATH="$HOME/.local/bin:$PATH"
+
+######### zsh options
+# Remove annoying sound when 
+setopt nobeep # there is a n error
+setopt nolistbeep # and the completion is ambigous
+setopt correct # correct argument 0 automatically
+
+
+# now it's in zshevn
+# export PATH="$HOME/.local/bin:$PATH"
 
 # zsh related
 source $HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -176,3 +185,19 @@ export XDG_CONFIG_HOME=$HOME/.config
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/salvo/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/salvo/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/home/salvo/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/salvo/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
