@@ -25,6 +25,10 @@ input {
         numlock
     }
 
+    tablet {
+        calibration-matrix 0.0 -1.0 1.0 1.0 0.0 0.0
+    }
+
     // Next sections include libinput settings.
     // Omitting settings disables them, or leaves them at their default values.
     // All commented-out settings here are examples, not defaults.
@@ -267,9 +271,6 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-environment {
-    XDG_CONFIG_HOME "/home/salvo/.config"
-}
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-sh-at-startup "waybar -c $XDG_CONFIG_HOME/niri/waybar/waybar.config -s $XDG_CONFIG_HOME/niri/waybar/waybar.style.css >/tmp/waybar 2>&1"
 spawn-sh-at-startup "swayidle -w before-sleep \"bash $XDG_CONFIG_HOME/swaylock/swaylock-random-image.sh\" > /tmp/swayidle 2>&1"
@@ -339,6 +340,22 @@ window-rule {
   }
 }
 
+window-rule{
+    match title="Write" app-id="Write"
+    default-column-width{
+        proportion 0.5
+    }
+}
+
+window-rule {
+    match app-id="firefox" title="^Extension: (Bitwarden Password Manager) - Bitwarden — Mozilla Firefox$"
+    // set-floating
+    open-floating true
+    default-column-width {
+        proportion 0.3
+    }
+}
+
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 window-rule {
@@ -384,7 +401,8 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+D hotkey-overlay-title="Run an Application: wmenu" { spawn "wmenu-run"; }
+    // Mod+D hotkey-overlay-title="Run an Application: wmenu" { spawn "wmenu-run"; }
+    Mod+D hotkey-overlay-title="Run an Application: bemenu" { spawn "bemenu-run"; }
     Alt+Space hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "bash $XDG_CONFIG_HOME/swaylock/swaylock-random-image.sh"; }
     Alt+Ctrl+Space hotkey-overlay-title="Suspend the PC" { spawn-sh "systemctl suspend"; }
 
@@ -627,7 +645,7 @@ binds {
     // Mod+Shift+Space { switch-layout "prev"; }
 
     Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
+    Ctrl+Print { screenshot-path; }
     Alt+Print { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
