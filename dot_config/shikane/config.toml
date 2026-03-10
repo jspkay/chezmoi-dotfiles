@@ -31,9 +31,10 @@ exec = ["notify-send shikane \"Profile $SHIKANE_PROFILE_NAME has been applied\""
 
   [[profile.output]]
   enable = true
-  search = ["m=SyncMaster", "s=HMBB405425", "v=Samsung Electric Company"]
-  mode = "1920x1200@59.95Hz"
-  position = "6880,9500"
+  search = ["m=BenQ GW2490T", "s=39S0050001Q", "v=PNP(BNQ)"]
+  # search = ["m=SyncMaster", "s=HMBB405425", "v=Samsung Electric Company"]
+  mode = "1920x1080@100Hz"
+  position = "7000,9500"
   scale = 1.0
   transform = "90"
   adaptive_sync = false
