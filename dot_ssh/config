@@ -12,9 +12,8 @@ Host gitlab.com
 # Gpu1 
 Host gpu1
   HostName gpu1.inl90.ec-lyon.fr
-  PreferredAuthentications publickey,password
+  PreferredAuthentications password
   User spappalardo@inl34
-  IdentityFile ~/.ssh/gpu1new
   WarnWeakCrypto no
 
 # github.com
