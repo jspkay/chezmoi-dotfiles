@@ -243,16 +243,16 @@ layout {
         // pixels and match the CSS box-shadow properties.
 
         // Softness controls the shadow blur radius.
-        softness 32
+        softness 10
 
         // Spread expands the shadow.
-        spread 18
+        spread 10
 
         // Offset moves the shadow relative to the window.
         offset x=0 y=0
 
         // You can also change the shadow color and opacity.
-        color "#00F7"
+        color "#6495ed"
         inactive-color "#0007"
     }
 
@@ -401,7 +401,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+D hotkey-overlay-title="Run an Application: wmenu" { spawn-sh "wmenu-run -b -i -l 10 -f 'helvetica bold 14' -S F20044 -N 000000"; }
+    Mod+N hotkey-overlay-title="Run an Application: wmenu" { spawn-sh "killall wmenu & wmenu-run -p 'Open Application' -b -i -l 10 -f 'helvetica bold 14' -M F20044 -S F20044 -N 000000"; }
     // Mod+D hotkey-overlay-title="Run an Application: bemenu" { spawn "bemenu-run"; }
     Alt+Space hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "bash $XDG_CONFIG_HOME/swaylock/swaylock-random-image.sh"; }
     Alt+Ctrl+Space hotkey-overlay-title="Suspend the PC" { spawn-sh "systemctl suspend"; }
