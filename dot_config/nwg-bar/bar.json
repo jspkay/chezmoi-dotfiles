@@ -15,6 +15,11 @@
     "icon": "/usr/share/nwg-bar/images/system-log-out.svg"
   },
   {
+    "name": "Hibernate",
+    "exec": "systemctl hibernate",
+    "icon": "/usr/share/nwg-bar/images/system-hibernate.svg"
+  },
+  {
     "name": "Reboot",
     "exec": "systemctl reboot",
     "icon": "/usr/share/nwg-bar/images/system-reboot.svg"
