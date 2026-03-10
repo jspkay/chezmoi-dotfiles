@@ -1,6 +1,8 @@
 # misc
-# export TERM=xterm-256color
-export TERM=kitty
+export TERM=xterm-256color
+# export TERM=kitty
+
+greetSalvo
 
 #
 # If you come from bash you might have to change your $PATH.
@@ -154,11 +156,13 @@ export EDITOR=helix
 . $HOME/.config/bemenu/config.sh
 
 ##### Aliases 
-# General commands
-alias hx=helix
-alias ls='ls --color=auto -oh'
-alias swaylock=$XDG_CONFIG_HOME/swaylock/swaylock-random-image.sh
-alias randr=wlr-randr
+    # General commands
+    alias hx=helix
+    alias ls='ls --color=auto -oh'
+    alias swaylock=$XDG_CONFIG_HOME/swaylock/swaylock-random-image.sh
+    alias randr=wlr-randr
+        # ranger shows previews correctly 
+    alias ranger="TERM='kitty' ranger"
 # Chezmoi
 alias cm=chezmoi
 alias cme="chezmoi edit"
