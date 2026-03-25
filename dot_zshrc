@@ -166,7 +166,8 @@ export EDITOR=helix
 ##### Aliases 
     # General commands
     alias hx=helix
-    alias ls='ls --color=auto -oh'
+    # alias ls='ls --color=auto -oh'
+    alias ls='eza --icons=always --sort modified -l'
     alias swaylock=$XDG_CONFIG_HOME/swaylock/swaylock-random-image.sh
     alias randr=wlr-randr
         # ranger shows previews correctly 
