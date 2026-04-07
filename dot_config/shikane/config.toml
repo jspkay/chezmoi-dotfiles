@@ -2,7 +2,7 @@
 name="home_lyon"
 exec = ["notify-send shikane \"Profile $SHIKANE_PROFILE_NAME has been applied\""]
   [[profile.output]]
-  search = "HKC OVERSEAS LIMITED"
+  search = ["m=15B1", "s=0000000000000", "v=HKC OVERSEAS LIMITED"]
   enable = true
   mode = "1920x1080@60"
   position = "13498,10000"
@@ -79,3 +79,55 @@ exec = ["notify-send shikane \"Profile $SHIKANE_PROFILE_NAME has been applied\""
   transform = "normal"
   adaptive_sync = false
 
+[[profile]]
+name = "generic_HDMI"
+exec = ["notify-send shikane \"Profile $SHIKANE_PROFILE_NAME has been applied\""]
+
+  [[profile.output]]
+  enable = true
+  search = "eDP-1"
+  mode = "1920x1080@60.02Hz"
+  position = "10789,10000"
+  scale = 1.09765625
+  transform = "normal"
+  adaptive_sync = false
+
+  [[profile.output]]
+  enable = true
+  search = "HDMI-A-1"
+  mode = "1920x1080@60Hz"
+  position = "8869,10000"
+  scale = 1.0
+  transform = "normal"
+  adaptive_sync = false
+
+
+[[profile]]
+name = "frynis"
+
+  [[profile.output]]
+  enable = true
+  search = ["m=DELL P2419HC", "s=7Y04JQ2", "v=Dell Inc."]
+  mode = "1920x1080@60Hz"
+  position = "13669,9580"
+  scale = 1.0
+  transform = "270"
+  adaptive_sync = false
+
+  [[profile.output]]
+  enable = true
+  search = ["m=0x0724", "s=", "v=LG Display"]
+  mode = "1920x1080@60.02Hz"
+  position = "10000,10000"
+  scale = 1.09765625
+  transform = "normal"
+  adaptive_sync = false
+
+  [[profile.output]]
+  enable = true
+  search = ["m=HP P22h G5", "s=3CM24801TX", "v=HP Inc."]
+  mode = "1920x1080@60Hz"
+  position = "11749,10000"
+  scale = 1.0
+  transform = "normal"
+  adaptive_sync = false
