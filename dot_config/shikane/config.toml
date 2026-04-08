@@ -104,6 +104,7 @@ exec = ["notify-send shikane \"Profile $SHIKANE_PROFILE_NAME has been applied\""
 
 [[profile]]
 name = "frynis"
+exec = ["notify-send shikane \"Profile $SHIKANE_PROFILE_NAME has been applied\""]
 
   [[profile.output]]
   enable = true
@@ -131,3 +132,35 @@ name = "frynis"
   scale = 1.0
   transform = "normal"
   adaptive_sync = false
+
+[[profile]]
+  name = "evas"
+exec = ["notify-send shikane \"Profile $SHIKANE_PROFILE_NAME has been applied\""]
+
+  [[profile.output]]
+  enable = true
+  search = ["m=DELL E2216H", "s=2XT7668VDH3B", "v=Dell Inc."]
+  mode = "1920x1080@60Hz"
+  position = "7909,10000"
+  scale = 1.0
+  transform = "normal"
+  adaptive_sync = false
+
+  [[profile.output]]
+  enable = true
+  search = ["m=0x0724", "s=", "v=LG Display"]
+  mode = "1920x1080@60.02Hz"
+  position = "11749,10000"
+  scale = 1.09765625
+  transform = "normal"
+  adaptive_sync = false
+
+  [[profile.output]]
+  enable = true
+  search = ["m=DELL P2419HC", "s=80L2JQ2", "v=Dell Inc."]
+  mode = "1920x1080@60Hz"
+  position = "9829,10000"
+  scale = 1.0
+  transform = "normal"
+  adaptive_sync = false
+
