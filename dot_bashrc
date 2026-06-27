@@ -1,0 +1,35 @@
+echo "Sourcing .bashrc"
+source ~/.profile
+
+eval "$(zoxide init bash)"
+eval "$(fzf --bash)"
+
+#### Aliases
+source ~/.aliases
+
+# Other stuff
+export TERM=xterm-256color
+
+# usiliary functions
+function showcolors () {
+  for i in {0..255}
+  do
+      print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}
+  done
+}
+
+function colormap() {
+  local i bg fg reset
+  reset=$'\E[00m'
+  for i in {0..255}; do
+    fg=$'\E[38;5;'$i'm'
+    bg=$'\E[48;5;'$i'm'
+    printf "%s  %s"    "$bg" "$reset"
+    printf "%s%03d%s " "$fg" "$i" "$reset"
+    (( i <= 15 && (i + 1)  % 8 == 0 )) && echo
+    (( i > 15  && (i - 15) % 6 == 0 )) && echo
+  done
+}
+
+alias ls="eza --color --icons --long --sort=modified"
+alias grep="grep --color=always"

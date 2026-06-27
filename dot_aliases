@@ -1,0 +1,22 @@
+##### Aliases 
+# General commands
+alias hx=helix
+alias ls='ls --color=auto -oh'
+alias swaylock=$XDG_CONFIG_HOME/swaylock/swaylock-random-image.sh
+alias randr=wlr-randr
+# Chezmoi
+alias cm=chezmoi
+alias cme="chezmoi edit"
+alias cmea="chezmoi edit --apply"
+alias cmgs="chezmoi git status"
+alias cms="chezmoi status"
+alias cma="chezmoi add"
+alias cmra="chezmoi re-add"
+# Avoid to accidentally remove important stuff... -.-
+alias rm=rmtrash
+alias rmdir=rmdirtrash
+# play whatever music or video is in this directory
+alias mmm="mpv ."
+# alias for emacs on terminal 
+alias emacs=emacs -nw
+
