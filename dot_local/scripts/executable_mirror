@@ -1,0 +1,17 @@
+#/bin/zsh
+
+# displays=$(niri msg outputs | grep -i output | cut -d'"' -f3 | tr '(' ' ' | tr ')' ' ' )
+readarray displays <<< $(niri msg outputs | grep -i output | cut -d " " -f2-)
+
+echo wmenu_flags: "$WMENU_FLAGS"
+
+choice=$(printf '%s' "${displays[@]}" | wmenu -b -i -l 10 -f 'helvetica bold 14' -S F20044 -N 000000)
+
+echo $choice
+
+# choice=$(wmenu -l ${#displays[@]} <<< $displayList)
+
+dpname=$(echo $choice | cut -d'"' -f3 | cut -d"(" -f2 | cut -d')' -f1)
+echo $dpname
+
+wl-mirror $dpname
