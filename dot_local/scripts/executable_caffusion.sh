@@ -20,12 +20,11 @@ fi
  
 # otherwise, we spawn a new infusion job
 swayidle -w \
-       timeout 300 'swaylock -f -c 000000' \
-       timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-       before-sleep 'swaylock -f -c 000000' &
+       timeout 300 'swaylock' \
+       timeout 600 'systemctl suspend' &
+swayidlePID=$!
 disown
 
-swayidlePID=$!
 echo "activating infusion with PID $swayidlePID"
 echo $swayidlePID > $PIDFILE
 notify-send $NS_FLAGS "Infusion" "[caffusion] Infusion is activated\nLock after 5 minutes, sleep after 10 minutes"
